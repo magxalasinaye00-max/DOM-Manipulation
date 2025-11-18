@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamic Profile Card</title>
+    <style>
+        #profileCard {
+            width: 250px;
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+            border: 2px solid #333;
+            background: white;
+        }
+
+        #profileImage {
+            border-radius: 50%;
+            margin-bottom: 10px;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+        }
+
+        button {
+            margin: 5px;
+            padding: 8px 12px;
+            cursor: pointer;
+        }
+
+        .active-status {
+            background-color: white;
+            border-color: green;
+        }
+    </style>
+</head>
+<body>
+   <div id="profileCard">
+    <img id="profileImage" src="https://placehold.co/100x100" alt="Profile Picture">
+    <h2 id="profilName">Sinaye Magxala</h2>
+    <p id="profileRole">Front End Developer</p>
+    <p id="profileBio">Passionate about coding and learning new technology</p>
+
+    <button id="updateNameBtn">Update Name</button>
+    <button id="updateRoleBtn">Update Role</button>
+    <button id="toggleStatusBtn">Toggle Active Status</button>
+    <button id="changeImageBtn">Change Image</button>
+   </div> 
+
+   <script>
+    const profileCard = document.getElementById("profileCard");
+    const profileName = document.getElementById("ProfileName");
+    const profileRole = document.getElementById("profileRole");
+    const profileImage = document.getElementById("profileImage");
+
+    document.getElementById("updateNameBtn").onclick = () => {
+        const newName = prompt("Enter a new name:");
+        if (newName) profileName.textContent = newName;
+    };
+
+    document.getElementById("updateRoleBtn").onclick = () => {
+        const newRole = prompt("Enter a new role:");
+        if (newRole) profileRole.textContent = newRole;
+    };
+
+    document.getElementById("toggleStatusBtn").onclick = () => {
+        profileCard.classList.toggle("active-status");
+    };
+
+    document.getElementById("changeImageBtn").onclick = () => {
+        const newImageUrl = prompt("Enter a new image URL");
+        if (newImageUrl) profileimage.src = newImageUrl;
+    };
+   </script>
+</body>
+</html>
